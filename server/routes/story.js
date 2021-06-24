@@ -3,19 +3,14 @@ const textGeneratorapi = require('../textGenerator')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  res.json({ text: 'Hello from server' })
-})
-
-router.post('/', (req, res) => {
+router.post('/getstory', (req, res) => {
   const { text } = req.body
   textGeneratorapi.addStory({ text })
-    .then(newTalk => {
-      res.json(newTalk)
+    .then(moreStory => {
+      res.json({ moreStory: moreStory })
       return null
     })
-    .catch(err => {
-      console.error(err)
+    .catch(() => {
       res.sendStatus(500)
     })
 })
