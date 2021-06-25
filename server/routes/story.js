@@ -9,7 +9,7 @@ router.post('/getstory', (req, res) => {
   const { text } = req.body
   textGeneratorapi.addStory({ text })
     .then(moreStory => {
-      res.json({ moreStory: moreStory })
+      res.json(moreStory)
       return null
     })
     .catch(() => {

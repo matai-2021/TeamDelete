@@ -2,10 +2,12 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1/story'
 
-export function getStory () {
-  return request.get(rootUrl + '/getstory')
+export function getStory (input) {
+  return request.post(rootUrl + '/getstory')
+    .send({ text: input })
     .then(res => {
-      return res.body
+      console.log(res.body)
+      return (res.body)
     })
   // return Promise.resolve(
   //   ({
