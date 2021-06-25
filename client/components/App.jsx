@@ -20,7 +20,8 @@ function App () {
         <h1>Team Delete App is ready</h1>
         <img src="./images/book.jpg" />
         <p>{story}</p>
-        <button onClick={handleClick}>Click me</button>
+        <textarea />
+        <button onClick={handleClick}>Lick me</button>
       </div>
     </>
   )
