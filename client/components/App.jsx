@@ -3,7 +3,7 @@ import { getStory } from '../apis/api'
 
 function App () {
   const [story, setStory] = useState('')
-  const [input, setInput] = useState('I\' very happy today and')
+  const [input, setInput] = useState('Once upon a time a long time ago a king and a queen has a beautiful daughter named Fiona')
 
   function handleClick () {
     getStory(input)
