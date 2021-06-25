@@ -3,10 +3,11 @@ import { getStory } from '../apis/api'
 
 function App () {
   const [story, setStory] = useState('')
+  const [input, setInput] = useState('I\' very happy today and')
 
   function handleClick () {
-    getStory()
-      .then(({ text }) => {
+    getStory(input)
+      .then(text => {
         setStory(text)
         return null
       })
@@ -14,13 +15,19 @@ function App () {
         console.error(err.message)
       })
   }
+
+  function handleChange (event) {
+    setInput(event.target.value)
+  }
+
   return (
     <>
       <div className='app'>
         <h1>Team Delete App is ready</h1>
+        {/* <img src="./images/book.jpg" /> */}
         <p>{story}</p>
-        <textarea />
-        <button onClick={handleClick}>Lick me</button>
+        <textarea onChange={handleChange} value={input} />
+        <button onClick={handleClick}>Give me more!</button>
       </div>
     </>
   )
