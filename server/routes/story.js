@@ -18,14 +18,15 @@ router.post('/getstory', (req, res) => {
 })
 
 router.post('/identifystatement', (req, res) => {
-  const { sentence } = req.body
-  sentiment.identifySentiment({ sentence })
+  const { text } = req.body
+
+  sentiment.identifySentiment({ text })
     .then(sentiments => {
       res.json(sentiments)
       return null
     })
-    .catch(err => {
-      console.error(err)
+    .catch(() => {
+      // console.error(err)
       res.sendStatus(500)
     })
 })

@@ -1,16 +1,20 @@
 const request = require('superagent')
 
-const sentimentApiUrl = ('https://api.deepai.org/api/sentiment-analysis ')
+const sentimentApiUrl = ('https://api.deepai.org/api/sentiment-analysis')
 
-const identifySentiment = (paragraph) => {
-  const { sentence } = paragraph
-  return request(sentimentApiUrl)
-    .then((sentiments) => {
-      console.log(sentiments)
-      return sentiments
+const { apiKey } = require('./textGenerator')
+
+const identifySentiment = (text) => {
+  return request.post(sentimentApiUrl)
+    .set('api-key', apiKey)
+    .type('form')
+    .send(text)
+    .then((data) => {
+      const parsedOutput = JSON.parse(data.text)
+      return parsedOutput.output
     })
     .catch(err => {
-      console.error('Error:', err)
+      console.error(err)
       throw err
     })
 }

@@ -19,5 +19,6 @@ function addStory (paragrapgh) {
 }
 
 module.exports = {
-  addStory
+  addStory,
+  apiKey
 }
