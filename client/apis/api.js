@@ -9,9 +9,4 @@ export function getStory (input) {
       console.log(res.body)
       return (res.body)
     })
-  // return Promise.resolve(
-  //   ({
-  //     text: 'Once upon a time in a galaxy far far away...'
-  //   })
-  // )
 }
