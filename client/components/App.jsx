@@ -24,8 +24,8 @@ function App() {
     <>
       <div className='app'>
         <div className='container'>
-          <p className='story'>{story}</p>
           <textarea cols={50} rows={5} onChange={handleChange} value={input} />
+          <p className='story'>{story}</p>
 
         </div>
         <button onClick={handleClick}>Give me more!</button>
