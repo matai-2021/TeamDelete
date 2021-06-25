@@ -8,7 +8,7 @@ body {
 
 textarea {
 
-  margin-top: 0px;
+  margin-top: -20px;
   margin-left: 50px;
 }
 
@@ -20,5 +20,12 @@ button {
 .story {
   margin-top: 500px;
   margin-left: 500px;
+  font-size: xx-large;
+  font-family: monospace;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2;
 }
 
