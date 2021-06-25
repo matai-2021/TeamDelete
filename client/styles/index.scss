@@ -2,5 +2,30 @@
 
 html, 
 body {
+  font-size:x-small;
   font-family: 'Montserrat', sans-serif;
 }
+
+textarea {
+
+  margin-top: 500px;
+  margin-left: 50px;
+}
+
+// button {
+//    margin-top: 100px;
+//   margin-left: 50px;
+// }
+
+.story {
+  margin-top: 200px;
+  // margin-left: 500px;
+  font-size: xx-large;
+  font-family: monospace;
+}
+
+.container {
+  display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
