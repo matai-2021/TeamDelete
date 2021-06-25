@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { getStory } from '../apis/api'
 
-function App() {
+function App () {
   const [story, setStory] = useState('')
   const [input, setInput] = useState('I\' very happy today and')
 
-  function handleClick() {
+  function handleClick () {
     getStory(input)
       .then(text => {
         setStory(text)
@@ -16,7 +16,7 @@ function App() {
       })
   }
 
-  function handleChange(event) {
+  function handleChange (event) {
     setInput(event.target.value)
   }
 
