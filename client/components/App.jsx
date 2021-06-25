@@ -18,7 +18,6 @@ function App () {
     <>
       <div className='app'>
         <h1>Team Delete App is ready</h1>
-        <img src="./images/book.jpg" />
         <p>{story}</p>
         <textarea />
         <button onClick={handleClick}>Lick me</button>
