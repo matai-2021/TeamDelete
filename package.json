@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "hash-string": "^1.0.0",
     "knex": "^0.21.12",
     "pg": "^8.5.1",
     "superagent": "^6.1.0"
