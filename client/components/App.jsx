@@ -32,7 +32,6 @@ function App () {
         }))
     const resolvedStory = await Promise.all(promiseStory)
     setColorisedStory(resolvedStory)
-    console.log(resolvedStory)
   }
 
   function handleChange (event) {
@@ -45,16 +44,31 @@ function App () {
         <div className='container'>
           <textarea cols={50} rows={5} onChange={handleChange} value={input} />
           <p className='story'>{story}</p>
-          <div>
-            { colorisedStory.map(sentence => {
-              <p>{sentence}</p>
-            }) }
-          </div>
         </div>
         <button onClick={handleClick}>Give me more!</button>
+        <div>
+          {colorisedStory
+            .map(sentence =>
+              <p key={sentence.id}
+                style={{ fontSize: 'xx-large', color: sentimentToColor(sentence.sentiment[0]) }}>
+                {sentence.sentence}
+              </p>)
+          }
+        </div>
       </div>
     </>
   )
+}
+
+function sentimentToColor (sentiment) {
+  switch (sentiment) {
+    case 'Negative':
+      return 'red'
+    case 'Positive':
+      return 'green'
+    default:
+      return 'black'
+  }
 }
 
 export default App

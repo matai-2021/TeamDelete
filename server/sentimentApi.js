@@ -5,7 +5,6 @@ const sentimentApiUrl = ('https://api.deepai.org/api/sentiment-analysis')
 const { apiKey } = require('./textGenerator')
 
 const identifySentiment = (text) => {
-  return Promise.resolve(['Negative'])
   return request.post(sentimentApiUrl)
     .set('api-key', apiKey)
     .type('form')
